@@ -9,17 +9,26 @@ Installation
 In order to install the program so it runs at startup you need to create an entry to rc.local.
 
 ```bash
+#copy program
+$ sudo cp ./Program /home/pi/Desktop/Programs/Program
+
+# set rights to execute the file
+$ sudo chmod 0777 /home/pi/Desktop/Programs/Program
+
 # test program first
 # abort with crtl + c
-./Program
+/home/pi/Desktop/Programs/Program
 
 # open autostart file
 $ sudo nano /etc/rc.local
 # add the script (above exit 0)
-/home/pi/Desktop/Programs/Program
+/home/pi/Desktop/Programs/Program </dev/null >/dev/null 2>&1 &
 
 # press ctrl + x and save with y
 # reboot your system
+
+# kill the Program
+sudo killall Program
 ```
 
 How to compile
@@ -43,6 +52,13 @@ $ sudo make cleanall
 $ sudo make rebuild
 # manually compile with (remove the lib.h include then)
 $ sudo gcc -o main.o main.cpp -pedantic -Wall
+```
+
+Version History
+===============
+
+```
+1.0 Release (05.06.2014)
 ```
 
 Licence and Copyright
@@ -69,11 +85,4 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
-```
-
-Version History
-===============
-
-```
-1.0 Release (05.06.2014)
 ```

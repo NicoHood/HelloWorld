@@ -26,8 +26,8 @@ THE SOFTWARE.
 #include <stdlib.h> // exit(int);
 #include <string.h> // errno
 #include <errno.h> // error output
-#include <stdint.h> //uint_t definitions
-#include <stdbool.h> //bool type
+#include <stdint.h> // uint_t definitions
+#include <stdbool.h> // bool type
 
 // include library
 #include "lib.h"
@@ -44,10 +44,12 @@ int main(){
 }
 
 void setup(void){
+	// put your setup code here, to run once:
 	printf("%s \n", "Hello World");
 }
 
 void loop(void){
-	// your code here, remove exit 0
+	// put your main code here, to run repeatedly:
+	// remove exit 0
 	exit (0);
 }
